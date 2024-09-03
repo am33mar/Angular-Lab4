@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body">
+    <p>Name :{{ myProduct?.name }}</p>
+    <p>Price:
+      @if (previousValue) {
+      <span [ngClass]="{'discounted':true}">{{previousValue}}</span>
+      }
+      <span> {{ myProduct?.price }}</span>
+    </p>
+    <p>Quantity : {{ myProduct?.quantity }}</p>
+    <div class="flex justify-between">
+      <button class="btn btn-danger w-40" (click)="removeProduct(myProduct?.id)">
+        Remove
+      </button>
+      <button (click)="editProductPrice(myProduct?.id)" class="ms-2 btn btn-warning w-40" [ngClass]="{'disabled':myProduct?.discounted}">
+        Discount
+      </button>
+    </div>
+
+
+  </div>
+
+</div>

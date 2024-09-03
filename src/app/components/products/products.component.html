@@ -1,0 +1,13 @@
+<div class="bg-slate-300 pb-5">
+  <div class="container">
+    <h1 class="text-center mb-3 pt-2">Explore our Products</h1>
+    <div class="row">
+      @for (product of products; track $index) {
+      <app-product-card (OnRemoveProduct)="removeProductHandler($event)" 
+      [myProduct]="product"
+      [ngClass]="{'hide':!product.display}"
+        class="col-sm-6 col-md-3" />
+      }
+    </div>
+  </div>
+</div>
